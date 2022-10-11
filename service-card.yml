@@ -1,0 +1,8 @@
+server:
+ port: 9040
+spring:
+ application:
+  name: service-card
+ data:
+  mongodb:
+   uri: mongodb://localhost:27017/card

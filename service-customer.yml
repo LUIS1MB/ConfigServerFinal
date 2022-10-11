@@ -1,0 +1,15 @@
+server:
+ port: 9001
+spring:
+ application:
+  name: service-customer
+ data:
+  mongodb:
+   uri: mongodb://localhost:27017/customer
+
+eureka:
+ instance: 
+  prefer-ip-address: true
+ client:
+  service-url:
+   defaultZone: http://localhost:9090/eureka

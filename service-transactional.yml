@@ -1,0 +1,33 @@
+server:
+ port: 9030
+spring:
+ application:
+  name: service-transactional
+ data:
+  mongodb:
+   uri: mongodb://localhost:27017/transaction
+ kafka:
+  properties:
+   sasl:
+    mechanism: PLAIN
+    jaas:
+     config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='Q66OK6CUKAHVAJQD'   password='7w5w3wE1r08Ab3omaKwUvPuH1V5nZiXwhbOHnAWUAvCEytvRQvG/DQiB971g973D';
+   bootstrap:
+    servers: pkc-epwny.eastus.azure.confluent.cloud:9092
+   security:
+    protocol: SASL_SSL
+  producer:
+   bootstrap-servers: pkc-epwny.eastus.azure.confluent.cloud:9092
+   key-serializer: org.apache.kafka.common.serialization.StringSerializer
+   value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+eureka:
+ client: 
+  service-url:
+   defaultZone: http://localhost:9090/eureka
+
+account:
+ url: http://localhost:9010/account/
+
+card: 
+ url: http://localhost:9040/card/

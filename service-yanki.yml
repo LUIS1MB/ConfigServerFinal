@@ -1,0 +1,24 @@
+server:
+ port: 9050
+spring:
+ application:
+  name: service-yanki
+ datasource:
+  url: jdbc:mysql://localhost:3306/yanki
+  username: root
+  password: admin
+ jpa:
+  hibernate:
+   ddl-auto: create
+ kafka:
+  properties:
+   sasl: 
+    mechanism: PLAIN
+   bootstrap:
+    servers: http://localhost:9092
+  consumer:
+   bootstrap-servers: http://localhost:9092
+   group-id: group_id
+   auto-offset-reset: earliest
+   key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+   value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
